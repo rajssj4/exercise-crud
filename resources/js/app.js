@@ -1,3 +1,4 @@
+
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -7,6 +8,14 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+import router from './routes';
+import Vue from 'vue';
+import ElementUI from 'element-ui';
+import locale from 'element-ui/lib/locale/lang/en';
+import Layout from './components/Layout.vue';
+
+
+Vue.use(ElementUI,{ locale });
 
 /**
  * The following block of code may be used to automatically register your
@@ -29,4 +38,8 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 const app = new Vue({
     el: '#app',
+    router,
+    components: {
+        Layout
+    }
 });
